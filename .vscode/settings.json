@@ -1,0 +1,10 @@
+{
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "prettier.printWidth": 100,
+    "prettier.tabWidth": 2,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "all",
+    "prettier.arrowParens": "always"
+  }
+  
