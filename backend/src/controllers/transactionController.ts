@@ -37,3 +37,19 @@ export const createTransaction = async (req: Request, res: Response): Promise<vo
     res.status(500).json({ message: 'Error creating transaction', error });
   }
 };
+
+export const deleteTransaction = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id } = req.params;
+    const deletedTransaction = await Transaction.findByIdAndDelete(id);
+
+    if (!deletedTransaction) {
+      res.status(404).json({ message: 'Transaction not found' });
+      return;
+    }
+
+    res.json({ message: 'Transaction deleted successfully', deletedTransaction });
+  } catch (error) {
+    res.status(500).json({ message: 'Error deleting transaction', error });
+  }
+};
